@@ -26,4 +26,6 @@
 
 ---
 
-
+<p align="center">
+  <img src="tokyo-ghoul.svg" width="380">
+</p>
