@@ -3,7 +3,7 @@
 # 🥀Bienvenido a mi perfil🥀
 
 <img src="https://media1.tenor.com/m/XhSyLnWGwQAAAAAC/tokyo-ghoul.gif" width="1000">
-<img src="img/banner.gif" alt="banner" width="1000">
+
 
 </div>
 
