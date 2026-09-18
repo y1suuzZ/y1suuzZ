@@ -1,60 +1,109 @@
-<svg width="380" height="200" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<svg width="380" height="240" viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
   <style>
-    .bg { fill: #0a0a0a; }
+    .bg { fill: #0d0d0d; }
     .border { fill: none; stroke: #8a0303; stroke-width: 4; }
     .title { font-family: 'Courier New', monospace; font-weight: bold; fill: #d10000; }
-    .flicker { animation: flicker 2.4s infinite steps(1); }
-    .blink { animation: blink 4s infinite; }
-    .glow { animation: glow 2s infinite ease-in-out; }
-    .wave1 { animation: wave 1.4s infinite ease-in-out; }
-    .wave2 { animation: wave 1.4s infinite ease-in-out 0.2s; }
-    .wave3 { animation: wave 1.4s infinite ease-in-out 0.4s; }
-    .press { font-family: 'Courier New', monospace; fill: #999; animation: flicker 1s infinite steps(1); }
+    .flicker { animation: flicker 3s infinite steps(1); }
+    .sway1 { animation: sway 2.2s infinite ease-in-out; transform-origin: bottom center; }
+    .sway2 { animation: sway 2.2s infinite ease-in-out 0.4s; transform-origin: bottom center; }
+    .sway3 { animation: sway 2.2s infinite ease-in-out 0.8s; transform-origin: bottom center; }
+    .glow { animation: glow 2.4s infinite ease-in-out; }
+    .fade { animation: fade 4s infinite ease-in-out; }
 
     @keyframes flicker {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
+      50% { opacity: 0.65; }
     }
-    @keyframes blink {
-      0%, 92%, 100% { transform: scaleY(1); }
-      95% { transform: scaleY(0.05); }
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(4deg); }
     }
     @keyframes glow {
       0%, 100% { filter: drop-shadow(0 0 2px #ff0033); }
-      50% { filter: drop-shadow(0 0 10px #ff0033); }
+      50% { filter: drop-shadow(0 0 8px #ff0033); }
     }
-    @keyframes wave {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(6px); }
+    @keyframes fade {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 0.3; }
     }
   </style>
 
-  <rect class="bg" width="380" height="200" rx="6"/>
-  <rect class="border" x="4" y="4" width="372" height="192" rx="4"/>
+  <rect class="bg" width="380" height="240" rx="6"/>
+  <rect class="border" x="4" y="4" width="372" height="232" rx="4"/>
 
-  <text x="190" y="34" text-anchor="middle" class="title flicker" font-size="22">東京喰種</text>
-  <text x="190" y="54" text-anchor="middle" class="title" font-size="14" letter-spacing="4">TOKYO GHOUL</text>
+  <text x="190" y="26" text-anchor="middle" class="title flicker" font-size="14" letter-spacing="3">白い彼岸花</text>
 
-  <g transform="translate(150,70)" class="glow">
-    <g class="blink" style="transform-origin: 40px 30px;">
-      <polygon points="0,30 12,10 40,0 68,10 80,30 68,50 40,60 12,50"
-               fill="#111" stroke="#ff0033" stroke-width="2"/>
-      <circle cx="40" cy="30" r="14" fill="#ff0033"/>
-      <circle cx="40" cy="30" r="6" fill="#000"/>
-      <rect x="34" y="4" width="4" height="10" fill="#ff0033"/>
-      <rect x="60" y="14" width="4" height="10" fill="#ff0033" transform="rotate(30 60 14)"/>
-      <rect x="16" y="46" width="4" height="10" fill="#ff0033" transform="rotate(-20 16 46)"/>
-    </g>
+  <!-- silla -->
+  <g transform="translate(150,110)">
+    <rect x="0" y="0" width="8" height="70" fill="#3a2a1a"/>
+    <rect x="72" y="0" width="8" height="70" fill="#3a2a1a"/>
+    <rect x="0" y="60" width="80" height="8" fill="#3a2a1a"/>
+    <rect x="0" y="-10" width="80" height="8" fill="#3a2a1a"/>
+    <rect x="0" y="-40" width="8" height="30" fill="#3a2a1a"/>
+    <rect x="72" y="-40" width="8" height="30" fill="#3a2a1a"/>
+    <rect x="0" y="-46" width="80" height="6" fill="#3a2a1a"/>
   </g>
 
-  <g transform="translate(150,150)">
-    <rect class="wave1" x="0"  y="0" width="10" height="10" fill="#8a0303"/>
-    <rect class="wave2" x="14" y="0" width="10" height="10" fill="#b30000"/>
-    <rect class="wave3" x="28" y="0" width="10" height="10" fill="#8a0303"/>
-    <rect class="wave1" x="42" y="0" width="10" height="10" fill="#b30000"/>
-    <rect class="wave2" x="56" y="0" width="10" height="10" fill="#8a0303"/>
-    <rect class="wave3" x="70" y="0" width="10" height="10" fill="#b30000"/>
+  <!-- figura sentada 1 (pelo blanco, ojo rojo) -->
+  <g transform="translate(158,60)">
+    <rect x="0" y="0" width="24" height="20" fill="#e8e8e8"/>
+    <rect x="0" y="20" width="24" height="14" fill="#f2e4d8"/>
+    <rect x="4" y="26" width="4" height="4" fill="#111"/>
+    <rect x="16" y="26" width="4" height="4" fill="#ff0033" class="glow"/>
+    <rect x="0" y="34" width="24" height="30" fill="#1a1a1a"/>
+    <rect x="-4" y="64" width="32" height="26" fill="#1a1a1a"/>
   </g>
 
-  <text x="190" y="188" text-anchor="middle" class="press" font-size="11">PRESS START</text>
+  <!-- figura sentada 2 (pelo negro largo) -->
+  <g transform="translate(198,66)">
+    <rect x="0" y="0" width="22" height="18" fill="#111"/>
+    <rect x="-4" y="14" width="30" height="34" fill="#111"/>
+    <rect x="2" y="18" width="18" height="12" fill="#f2e4d8"/>
+    <rect x="6" y="24" width="3" height="3" fill="#111"/>
+    <rect x="15" y="24" width="3" height="3" fill="#111"/>
+    <rect x="0" y="48" width="22" height="26" fill="#5a0a0a"/>
+    <rect x="-6" y="74" width="34" height="20" fill="#5a0a0a"/>
+  </g>
+
+  <!-- flores blancas (higanbana estilizada) -->
+  <g transform="translate(70,190)" class="sway1">
+    <rect x="0" y="10" width="4" height="20" fill="#3a5a2a"/>
+    <rect x="-4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="0" y="-4" width="4" height="4" fill="#fff"/>
+    <rect x="-2" y="4" width="8" height="4" fill="#fff"/>
+  </g>
+  <g transform="translate(100,200)" class="sway2">
+    <rect x="0" y="8" width="4" height="18" fill="#3a5a2a"/>
+    <rect x="-4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="0" y="-4" width="4" height="4" fill="#fff"/>
+    <rect x="-2" y="4" width="8" height="4" fill="#fff"/>
+  </g>
+  <g transform="translate(280,192)" class="sway3">
+    <rect x="0" y="10" width="4" height="20" fill="#3a5a2a"/>
+    <rect x="-4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="0" y="-4" width="4" height="4" fill="#fff"/>
+    <rect x="-2" y="4" width="8" height="4" fill="#fff"/>
+  </g>
+  <g transform="translate(310,202)" class="sway1">
+    <rect x="0" y="8" width="4" height="18" fill="#3a5a2a"/>
+    <rect x="-4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="0" y="-4" width="4" height="4" fill="#fff"/>
+    <rect x="-2" y="4" width="8" height="4" fill="#fff"/>
+  </g>
+  <g transform="translate(50,205)" class="sway2">
+    <rect x="0" y="6" width="4" height="16" fill="#3a5a2a"/>
+    <rect x="-4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="4" y="0" width="4" height="4" fill="#fff"/>
+    <rect x="0" y="-4" width="4" height="4" fill="#fff"/>
+    <rect x="-2" y="4" width="8" height="4" fill="#fff"/>
+  </g>
+
+  <!-- petalo cayendo -->
+  <rect x="90" y="50" width="3" height="3" fill="#fff" class="fade"/>
+  <rect x="300" y="70" width="3" height="3" fill="#fff" class="fade"/>
+  <rect x="250" y="40" width="3" height="3" fill="#fff" class="fade"/>
 </svg>
