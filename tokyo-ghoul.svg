@@ -1,0 +1,60 @@
+<svg width="380" height="200" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <style>
+    .bg { fill: #0a0a0a; }
+    .border { fill: none; stroke: #8a0303; stroke-width: 4; }
+    .title { font-family: 'Courier New', monospace; font-weight: bold; fill: #d10000; }
+    .flicker { animation: flicker 2.4s infinite steps(1); }
+    .blink { animation: blink 4s infinite; }
+    .glow { animation: glow 2s infinite ease-in-out; }
+    .wave1 { animation: wave 1.4s infinite ease-in-out; }
+    .wave2 { animation: wave 1.4s infinite ease-in-out 0.2s; }
+    .wave3 { animation: wave 1.4s infinite ease-in-out 0.4s; }
+    .press { font-family: 'Courier New', monospace; fill: #999; animation: flicker 1s infinite steps(1); }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.05); }
+    }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 2px #ff0033); }
+      50% { filter: drop-shadow(0 0 10px #ff0033); }
+    }
+    @keyframes wave {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+  </style>
+
+  <rect class="bg" width="380" height="200" rx="6"/>
+  <rect class="border" x="4" y="4" width="372" height="192" rx="4"/>
+
+  <text x="190" y="34" text-anchor="middle" class="title flicker" font-size="22">東京喰種</text>
+  <text x="190" y="54" text-anchor="middle" class="title" font-size="14" letter-spacing="4">TOKYO GHOUL</text>
+
+  <g transform="translate(150,70)" class="glow">
+    <g class="blink" style="transform-origin: 40px 30px;">
+      <polygon points="0,30 12,10 40,0 68,10 80,30 68,50 40,60 12,50"
+               fill="#111" stroke="#ff0033" stroke-width="2"/>
+      <circle cx="40" cy="30" r="14" fill="#ff0033"/>
+      <circle cx="40" cy="30" r="6" fill="#000"/>
+      <rect x="34" y="4" width="4" height="10" fill="#ff0033"/>
+      <rect x="60" y="14" width="4" height="10" fill="#ff0033" transform="rotate(30 60 14)"/>
+      <rect x="16" y="46" width="4" height="10" fill="#ff0033" transform="rotate(-20 16 46)"/>
+    </g>
+  </g>
+
+  <g transform="translate(150,150)">
+    <rect class="wave1" x="0"  y="0" width="10" height="10" fill="#8a0303"/>
+    <rect class="wave2" x="14" y="0" width="10" height="10" fill="#b30000"/>
+    <rect class="wave3" x="28" y="0" width="10" height="10" fill="#8a0303"/>
+    <rect class="wave1" x="42" y="0" width="10" height="10" fill="#b30000"/>
+    <rect class="wave2" x="56" y="0" width="10" height="10" fill="#8a0303"/>
+    <rect class="wave3" x="70" y="0" width="10" height="10" fill="#b30000"/>
+  </g>
+
+  <text x="190" y="188" text-anchor="middle" class="press" font-size="11">PRESS START</text>
+</svg>
